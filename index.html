@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="diamond.js"></script>
+    <title>fulldiamond</title>
+    <style>
+    body {
+        font-size: 30px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .container{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <script>
+    function diamond(rows) {
+        let output = "&nbsp;";
+        for (let i=1; i<=rows; i++) {
+        for (let j=1; j<=rows-i; j++) {
+            output += ""
+        }
+        for (let k= 1; k<=2*i-1; k++) {
+            output += "*";
+        }
+            output += "<br>";
+        }
+        for (let i=rows-1; i>=1; i--) {
+        for (let j=1; j<=rows-i; j++) {
+            output += "&nbsp;";
+            }
+        for (let k=1; k<=2*i-1 ; k++) {
+            output += "*";
+        }
+            output += "<br>";
+        }
+        return output;
+    }
+    let nums = parseInt(prompt("enter ur nb: "));
+    document.querySelector(".container").innerHTML = diamond(nums);
+    </script>
+    </body>
+</html>
